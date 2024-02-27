@@ -11,22 +11,28 @@
     <TextView
         android:id="@+id/greeting"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:gravity="center"
+        android:textSize="25dp"
         android:text="SignIn" />
 
     <EditText
         android:id="@+id/Email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="398dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round_shape"
         android:ems="10"
+        android:textAlignment="center"
         android:inputType="text"
         android:text="Email" />
 
     <EditText
         android:id="@+id/Name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="398dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round_shape"
+        android:textAlignment="center"
+
         android:ems="10"
         android:inputType="text"
         android:text="Name" />
@@ -35,11 +41,13 @@
         android:id="@+id/SignIn_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/gold"
         android:text="Sign In" />
 
     <Button
         android:id="@+id/SignUp_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/cyan"
         android:text="Sign up" />
 </LinearLayout>
