@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="TextView" />
+        android:text="SignIn" />
 
     <EditText
         android:id="@+id/Email"
@@ -32,8 +32,14 @@
         android:text="Name" />
 
     <Button
-        android:id="@+id/Submit_button"
+        android:id="@+id/SignIn_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Submit" />
+        android:text="Sign In" />
+
+    <Button
+        android:id="@+id/SignUp_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign up" />
 </LinearLayout>

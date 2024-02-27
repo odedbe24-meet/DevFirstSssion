@@ -7,12 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView textView;
     private EditText name, email;
-    private Button submit_button;
+    private Button signin_button, signup_button;
+
 
 
     @Override
@@ -22,15 +24,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textView = findViewById(R.id.greeting);
         name = findViewById(R.id.Name);
         email = findViewById(R.id.Email);
-        submit_button = findViewById(R.id.Submit_button);
-        submit_button.setOnClickListener(this);
+        signin_button = findViewById(R.id.SignIn_button);
+        signin_button.setOnClickListener(this);
+        signup_button = findViewById(R.id.SignUp_button);
+        signup_button.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        if(v == submit_button){
+        if(v == signin_button){
            String name1 = name.getText().toString();
             textView.setText(name1);
+        }
+        else if (v == signup_button){
+            Toast toast = Toast.makeText(this,"under construction", Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 }
