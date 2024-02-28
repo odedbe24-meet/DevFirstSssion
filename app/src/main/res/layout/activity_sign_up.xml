@@ -22,7 +22,7 @@
         android:layout_height="74dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:hint="Name"
         tools:layout_editor_absoluteX="35dp"
 
         tools:layout_editor_absoluteY="207dp" />
@@ -33,7 +33,7 @@
         android:layout_height="72dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Email"
+        android:hint="Email"
         tools:layout_editor_absoluteX="24dp"
         tools:layout_editor_absoluteY="281dp" />
 
@@ -43,7 +43,7 @@
         android:layout_height="89dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Password"
+        android:hint="Password"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="353dp" />
     />

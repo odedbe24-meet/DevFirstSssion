@@ -24,10 +24,10 @@
         android:ems="10"
         android:textAlignment="center"
         android:inputType="text"
-        android:text="Email" />
+        android:hint="Email" />
 
     <EditText
-        android:id="@+id/Name"
+        android:id="@+id/Password"
         android:layout_width="398dp"
         android:layout_height="48dp"
         android:background="@drawable/round_shape"
@@ -35,7 +35,9 @@
 
         android:ems="10"
         android:inputType="text"
-        android:text="Name" />
+        android:hint="Password"
+
+        />
 
     <Button
         android:id="@+id/SignIn_button"

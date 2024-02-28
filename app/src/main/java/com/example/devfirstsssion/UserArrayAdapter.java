@@ -21,6 +21,7 @@ public class UserArrayAdapter extends ArrayAdapter<User> {
         super(context, resource, objects);
         this.context = context;
         this.resource = resource;
+
     }
 
     @NonNull
@@ -28,11 +29,19 @@ public class UserArrayAdapter extends ArrayAdapter<User> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if (convertView == null){
             convertView = LayoutInflater.from(this.context).inflate(this.resource, parent, false);
+
         }
-        // Code goes here
+        User user = getItem(position);
+        TextView nameTextView = convertView.findViewById(R.id.user_name); // Replace with your actual text view ID
+        nameTextView.setText(user.getName());
+
+        TextView emailTextView = convertView.findViewById(R.id.user_email); // Replace with your actual text view ID
+        emailTextView.setText(user.getEmail());
+
 
         return convertView;
 
 
     }
+
 }
