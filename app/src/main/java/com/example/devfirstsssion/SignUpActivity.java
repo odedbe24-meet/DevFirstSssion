@@ -44,6 +44,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         if (v == submit) {
             create_user(email.getText().toString(), password.getText().toString());
+
         }
 
     }
@@ -54,9 +55,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            DatabaseReference ref =database.getReference("Users");
-                            ref.push().setValue("Hello, world");
-                            database.getReference("Users").child(mAuth.getUid()).push().setValue(new User(name.getText().toString(),email,password));
+                            User mUser = new User(name.getText().toString(),email,password);
+                            database.getReference("Users").child(mAuth.getUid()).setValue(mUser);
                             Intent i = new Intent(SignUpActivity.this, HomeActivity.class);
                             startActivity(i);
 
