@@ -29,7 +29,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         usersArrayList.add(new User("oded","odedb0105@gmail.com","dedo"));
-        usersArrayList.add(new User("Lior","Liorbrit@gmail.com","roiL"));
+        usersArrayList.add(new User("Test_User","test@gmail.com","das"));
         usersArrayList.add(new User(getIntent().getStringExtra("Name"),getIntent().getStringExtra("Email"),""));
         listView = findViewById(R.id.user_list);
 
