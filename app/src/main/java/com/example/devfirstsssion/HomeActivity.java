@@ -11,7 +11,10 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -31,14 +34,31 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         database = FirebaseDatabase.getInstance();
+        database.getReference("Users").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot data:snapshot.getChildren()){
+                String memail = data.child("email").getValue().toString();
+                String mname = data.child("name").getValue().toString();
+                String mpass= data.child("password").getValue().toString();
+                 usersArrayList.add(new User(mname,memail,mpass));
+                }
+                listView = findViewById(R.id.user_list);
+                arrayAdapter = new UserArrayAdapter(HomeActivity.this, R.layout.custom_row,usersArrayList);
+                listView.setAdapter(arrayAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 //        usersArrayList.add(new User("oded","odedb0105@gmail.com","dedo"));
 //        usersArrayList.add(new User("Test_User","test@gmail.com","das"));
 
 
-        listView = findViewById(R.id.user_list);
 
-        arrayAdapter = new UserArrayAdapter(this, R.layout.custom_row,usersArrayList);
-        listView.setAdapter(arrayAdapter);
     }
 
     @Override
